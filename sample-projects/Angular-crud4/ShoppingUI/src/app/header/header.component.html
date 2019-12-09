@@ -1,0 +1,78 @@
+<div class="header d-flex">
+<div class="logo" >
+  <a routerLink="/products"><img src="../../assets/images/logo.jpg" style="max-height:55px; max-width: 100%"> <div class="caret"></div></a>
+  </div>
+<span class="spacer"></span>
+<ul class="d-flex align-items-center">
+  <li class="py-1 px-2"><a routerLink="/cart"><i class='material-icons'>shopping_cart</i> <label *ngIf="cartItems.length > 0" class="badge badge-warning rounded">{{cartItems.length}}</label></a></li>
+  <li class="py-1 px-2" *ngIf="!userisAuthenticated"><a (click)="template.show()" role="button">Login & Signup</a></li>
+  <li class="py-1 px-2" *ngIf="userisAuthenticated && userdata != null && userdata">
+   <span class="px-2">{{userdata.fullname}}</span>
+  
+   <div class="btn-group" dropdown>
+     
+      <button id="button-basic" dropdownToggle type="button" class="btn btn-link dropdown-toggle"
+      aria-controls="dropdown-basic">
+      <img  class="profile" id="button-basic"  [src]="userdata.profilePic"  width="50" class="rounded-circle"/> <span class="caret"></span>
+</button>
+      
+          <ul  id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+          role="menu" aria-labelledby="button-basic">
+            <li role="menuitem">
+              <a class="dropdown-item" routerLink="/myprofile">MyProfile</a>
+            </li>
+            <li class="divider dropdown-divider"></li>
+             <li  role="menuitem" class="py-1 px-2" *ngIf="userisAuthenticated">
+                 <button  (click)="logout()" class="btn dropdown-item btn-link">Signout</button>
+               </li>
+          </ul>
+
+          
+       
+  </div>
+   
+   
+   
+   
+   
+   
+  </li>
+ 
+
+</ul>
+</div>
+<nav class="navbar navbar-expand-sm bg-secondary navbar-light">
+  <ul class="navbar-nav d-flex justify-content-around w-100">
+    <li class="nav-item active">
+      <a class="nav-link" [routerLink]="['/products', 'mens']" href="#">Mens</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="">Womens</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink>Electronics</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink>All</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div bsModal #template="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+     
+ 
+            <button type="button" class="close pull-right model-close" aria-label="Close" (click)="template.hide()">
+                <i class='material-icons'>
+                    close
+                  </i>
+            </button>
+       
+  <app-login  *ngIf="showlogin"></app-login>
+  <app-register *ngIf="!showlogin"></app-register>
+    </div>
+  </div>
+</div>

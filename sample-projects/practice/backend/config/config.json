@@ -1,0 +1,14 @@
+{
+    "development":{
+        "Port":3000,
+        "mongoose_Url":"mongodb+srv://ayyappa:alampalli123@cluster0-onoi8.mongodb.net/employee",
+        "security_key":"SECURITY_CODE",
+        "expires":"1h"
+    },
+    "production":{
+        "Port":80,
+        "mongoose_Url":"mongodb+srv://ayyappa:alampalli123@cluster0-onoi8.mongodb.net/employee",
+        "security_key":"SECURITY_CODE",
+        "expires":"1h"
+    }
+}

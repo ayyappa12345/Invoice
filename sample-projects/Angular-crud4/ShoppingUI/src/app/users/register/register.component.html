@@ -1,0 +1,63 @@
+<div class="user-form d-flex flex-row">
+    <div style="width:35%" class="d-flex flex-column bg-primary align-items-center justify-content-center">
+  <h1 class="sidebar-heading">Register</h1>
+  <span class="sidebar-icon"><i class='material-icons'>
+      lock
+    </i></span>
+    </div>
+    <div class="col-sm-8">
+  <div class="main-form p-3">
+      <form [formGroup]="registerForm" (submit)="onSubmit(registerForm)">
+    <div class="d-flex justify-content-center mb-2"><img src="../../../assets/images/avatar_pinterest_profile_user_icon_512.png" class="img-thumbnail rounded-circle" style="width:120px"></div>
+      
+        
+             <div class="form-group">
+                 <label>Fullname</label>
+                 <input class="form-control" type="text" formControlName="fullname">
+                 </div>
+
+                 <div class="form-group">
+                     <label>Username</label>
+                     <input class="form-control" type="text" formControlName="username">
+                     </div>
+                     <div class="form-group">
+                         <label>Phone</label>
+                         <input class="form-control" type="text" formControlName="phone">
+                         </div>
+            
+           <div class="form-group">
+               <label>Email</label>
+               <input class="form-control" type="text" formControlName="email">
+               </div>
+               <div class="form-group">
+                   <label>Password</label>
+                   <input class="form-control" type="password" formControlName="password">
+                   </div>
+
+                   <div class="form-group">
+                     <p>Gender</p>
+                       <div class="form-check-inline">
+                           <label class="form-check-label">
+                             <input type="radio" class="form-check-input" formControlName="gender" value="male">Male
+                           </label>
+                         </div>
+                         <div class="form-check-inline">
+                         <label class="form-check-label">
+                           <input type="radio" class="form-check-input" formControlName="gender" value="female">Female
+                         </label>
+                       </div>
+                     </div>
+                  
+             <div class="form-group">
+                <button type="bu" (click)="loginpage()" class="btn btn-light">Back to Login</button>
+             <button class="btn ml-2 btn-primary">Register</button>
+            
+             
+             </div>
+               
+             
+               </form>
+             </div>
+           
+
+ </div>

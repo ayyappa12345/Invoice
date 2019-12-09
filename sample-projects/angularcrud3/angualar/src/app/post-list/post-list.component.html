@@ -1,0 +1,16 @@
+<div class="container mt-3">
+<div class="card mb-2" *ngFor="let post of posts">
+  <div class="card-header">{{post.title}}</div>
+  <div class="card-body">{{post.content}}
+    <img [src]="post.image">
+  </div>
+  <div class="card-footer txt-right" *ngIf="userAuthenticated && post.creator===userid">
+    <button class="btn btn-danger mr-2 float-left" (click)="onDelete(post.id)">Delete</button>
+    <button class="btn btn-info float-left" (click)="onEdit(post.id)">Edit</button>
+  </div>
+</div>
+
+<div class="card mb-2" *ngIf="posts.length===0">
+    <div class="card-body"><p class="font-italic d-flex justify-content-center">No Records Found</p></div>
+</div>
+</div>
